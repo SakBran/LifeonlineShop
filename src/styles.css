@@ -1,0 +1,153 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+
+  display: block;
+  margin: 0px;
+  margin-bottom: 8px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.mat-toolbar.mat-primary {
+  padding: 0;
+}
+
+.nav_item_left {
+  height: 70px;
+  border-right: 1px solid #E6EAEA;
+  color: #202121;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding-left: 23px;
+  padding-right: 23px;
+
+}
+
+.nav_item_left_green {
+  height: 70px;
+  background-color: #49C5B6;
+  border-right: 1px solid #E6EAEA;
+  color: #202121;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding-left: 23px;
+  padding-right: 23px;
+
+}
+
+.mat-stroked-button:not([disabled]) {
+  border-color: #49C5B6;
+  cursor: pointer;
+}
+
+
+.nav_item_right {
+  position: absolute;
+  right: 0px;
+  width: 150px;
+  height: 70px;
+  border-right: 1px solid #E6EAEA;
+  background-color: #49c5b6;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding-left: 23px;
+  padding-right: 23px;
+
+}
+
+
+.nav_item_right_2nd {
+  position: absolute;
+  right: 200px;
+  width: 120px;
+  height: 70px;
+  border-left: 1px solid #E6EAEA;
+  background-color: transparent;
+  color: #202121;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding-left: 23px;
+  padding-right: 23px;
+
+}
+
+.nav_item_right_title {
+  position: center;
+
+  width: 200px;
+  height: 70px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: transparent;
+  font-style: normal;
+  color: #202121;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding-left: 23px;
+  padding-right: 23px;
+
+}
+
+.ico-menu {
+  position: relative;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  width: 15px;
+  height: 13px;
+  padding-top: 25px;
+}
+
+.menu_letter {
+  padding-bottom: 3px;
+}
+
+.icons {
+  max-width: 23px;
+  max-height: 23px;
+}
+
+
+.nav {
+  position: sticky;
+  width: 1px;
+  height: 100%;
+  background-color: #64686A;
+}
+
+.mat-toolbar.mat-primary {
+  background: #f4f7f6;
+  color: #202121;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav_item_right_2nd {
+    display: none;
+  }
+
+  .nav_item_right_title {
+    display: none;
+  }
+
+  .nav_item_right {
+    position: absolute;
+    right: 0px;
+    width: 150px;
+    height: 70px;
+    border-right: 1px solid #E6EAEA;
+    background-color: #49c5b6;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+
+  }
+}

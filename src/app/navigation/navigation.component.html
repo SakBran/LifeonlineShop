@@ -1,0 +1,41 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="category" (click)="drawer.toggle()">Home</a>
+      <a mat-list-item href="#" (click)="drawer.toggle()">Contact Us</a>
+      <a mat-list-item href="#" (click)="drawer.toggle()">About Us</a>
+      <a mat-list-item href="#" (click)="drawer.toggle()">Register/Login</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div class="nav_item_left" (click)="drawer.toggle()">
+        <div class="ico-menu">
+          <img class="icons" src="../../assets/baseline_menu_black_48dp.png">
+        </div>
+      </div>
+      <div class="nav_item_right_title">
+        <div class="ico-menu">
+          <span>Life Online Shop</span>
+        </div>
+      </div>
+      <div class="nav_item_right_2nd">
+        <div class="ico-menu">
+          <span>Register/Login</span>
+        </div>
+      </div>
+      <div class="nav_item_right" (click)="drawer.toggle()">
+        <div class="ico-menu">
+          <span>SHOPPING CART</span>
+        </div>
+      </div>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet>
+    </router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
