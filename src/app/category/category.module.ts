@@ -14,7 +14,8 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCardModule } from "@angular/material/card";
-
+import { MatInputModule } from "@angular/material/input";
+import { MatBadgeModule } from "@angular/material/badge";
 @NgModule({
   declarations: [CategoryNavComponent],
   imports: [
@@ -29,7 +30,9 @@ import { MatCardModule } from "@angular/material/card";
     MatMenuModule,
     MatTooltipModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatBadgeModule
   ]
 })
 export class CategoryModule {}

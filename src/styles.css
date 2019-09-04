@@ -10,6 +10,7 @@ body {
 
 }
 
+
 .mat-toolbar.mat-primary {
   padding: 0;
 }
@@ -26,9 +27,31 @@ body {
 
 }
 
+.nav_item_left:hover {
+  background-color: #E6EAEA;
+  border: 1px solid #49c5b6;
+}
+
+.nav_item_left_green:hover {
+  background-color: #E6EAEA;
+  border: 1px solid #49c5b6;
+}
+
+.nav_item_left_search {
+  height: 70px;
+  border-right: 1px solid #E6EAEA;
+  color: #202121;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding-left: 23px;
+  padding-right: 23px;
+
+}
+
 .nav_item_left_green {
   height: 70px;
-  background-color: #49C5B6;
+  background-color: transparent;
   border-right: 1px solid #E6EAEA;
   color: #202121;
   cursor: pointer;
@@ -62,6 +85,25 @@ body {
 }
 
 
+
+.nav_item_right_search {
+  position: absolute;
+  right: 0px;
+  width: 150px;
+  height: 70px;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  padding-left: 23px;
+  padding-right: 23px;
+
+}
+
+
+
 .nav_item_right_2nd {
   position: absolute;
   right: 200px;
@@ -76,6 +118,22 @@ body {
   padding-left: 23px;
   padding-right: 23px;
 
+}
+
+.nav_item_right_2nd :hover {
+  border: 1px solid transparent;
+}
+
+.ico-menu:hover {
+  border: 1px solid transparent;
+}
+
+.nav_item_right:hover {
+  background-color: transparent;
+  color: #49C5B6;
+  border: 1px solid #49C5B6;
+  border-top: 1px solid #49C5B6;
+  border-bottom: 1px solid #49C5B6;
 }
 
 .nav_item_right_title {
@@ -112,8 +170,13 @@ body {
 .icons {
   max-width: 23px;
   max-height: 23px;
+
 }
 
+.icons_arrow {
+  max-width: 10px;
+  max-height: 10px;
+}
 
 .nav {
   position: sticky;
@@ -127,6 +190,17 @@ body {
   color: #202121;
 }
 
+.mat-menu-content {
+  min-width: 250px;
+}
+
+.right {
+  position: absolute;
+  right: 16px;
+}
+
+
+
 @media only screen and (max-width: 800px) {
   .nav_item_right_2nd {
     display: none;
@@ -134,6 +208,15 @@ body {
 
   .nav_item_right_title {
     display: none;
+  }
+
+  .right {
+    position: absolute;
+    right: 16px;
+  }
+
+  .mat-menu-content {
+    min-width: 250px;
   }
 
   .nav_item_right {
@@ -147,7 +230,10 @@ body {
     cursor: pointer;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
+  }
 
-
+  nav_item_right:hover {
+    background-color: #E6EAEA;
+    border: 1px solid #49c5b6;
   }
 }

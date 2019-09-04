@@ -11,7 +11,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import { MatBadgeModule } from "@angular/material/badge";
 import { MatTooltipModule } from "@angular/material/tooltip";
 @NgModule({
   declarations: [AppComponent, NavigationComponent],
@@ -25,7 +25,8 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
