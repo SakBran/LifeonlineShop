@@ -1,8 +1,12 @@
-import { Component } from "@angular/core";
+import { Component, Inject } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Observable } from "rxjs";
 import { map, shareReplay } from "rxjs/operators";
-import { MatDialog } from "@angular/material/dialog";
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from "@angular/material/dialog";
 @Component({
   selector: "app-navigation",
   templateUrl: "./navigation.component.html",
@@ -35,4 +39,10 @@ export class NavigationComponent {
   selector: "shopCart",
   templateUrl: "shopCart.html"
 })
-export class shopCart {}
+export class shopCart {
+  constructor(public dialogRef: MatDialogRef<shopCart>) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
