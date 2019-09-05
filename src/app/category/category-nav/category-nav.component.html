@@ -41,20 +41,20 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <div class="nav_item_left_green" matTooltip="Click to display categories" (click)="drawer.toggle()">
+    <mat-toolbar id="catMenu" color="primary">
+      <div class="nav_item_left_green" matTooltip="Click to display categories" (click)="drawer.toggle();catOpen()">
         <div class="ico-menu">
           <img class="icons" src="../../assets/baseline_view_carousel_black_48dp.png">
         </div>
       </div>
 
-      <input matInput class="input_search" placeholder="Search....." />
+      <input id="searchtxt" matInput class="input_search" placeholder="Search....." />
 
       <img class="input_search_btn" src="../../assets/icons8-search-80.png">
 
-      <img class="input_cart_btn" matTooltip="Click to display categories" (click)="drawer.toggle()"
+      <img class="input_cart_btn" matTooltip="Click to show Shopping Cart" (click)="open()"
         src="../../assets/icons8-shopping-cart-80.png">
-      <img class="input_z_btn" matTooltip="Click to display categories" (click)="drawer.toggle()"
+      <img class="input_z_btn" matTooltip="Click to display categories" (click)="drawer.toggle();catOpen()"
         src="../../assets/round_view_carousel_black_48dp.png">
     </mat-toolbar>
 
@@ -75,9 +75,9 @@
                 </mat-menu>
               </mat-card-title>
             </mat-card-header>
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            <!--- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
               alt="Photo of a Shiba Inu">
-
+-->
           </mat-card>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
@@ -94,10 +94,10 @@
                 </mat-menu>
               </mat-card-title>
             </mat-card-header>
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            <!---    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
               alt="Photo of a Shiba Inu">
 
-
+--->
           </mat-card>
         </mat-grid-tile>
       </mat-grid-list>

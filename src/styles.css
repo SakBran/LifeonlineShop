@@ -65,6 +65,7 @@ body {
 .mat-stroked-button:not([disabled]) {
   border-color: #49C5B6;
   cursor: pointer;
+  color: #49C5B6;
 }
 
 
@@ -206,6 +207,19 @@ body {
     display: none;
   }
 
+  .input_search {
+    position: absolute;
+    right: 42px;
+    height: 30px;
+    border: 1px solid;
+    border-block-color: #49c5b6;
+    border-left-color: #49c5b6;
+    border-right-color: #49c5b6;
+    min-width: 300px;
+    max-width: 300px;
+    padding-right: 2px;
+  }
+
   .nav_item_right_title {
     display: none;
   }
@@ -235,5 +249,20 @@ body {
   nav_item_right:hover {
     background-color: #E6EAEA;
     border: 1px solid #49c5b6;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .input_search {
+    position: absolute;
+    right: 42px;
+    height: 30px;
+    border: 1px solid;
+    border-block-color: #49c5b6;
+    border-left-color: #49c5b6;
+    border-right-color: #49c5b6;
+    min-width: 100px;
+    max-width: 100px;
+    padding-right: 2px;
   }
 }

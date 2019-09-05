@@ -231,6 +231,7 @@ button.mat-menu-item {
   border-left-color: #49c5b6;
   border-right-color: #49c5b6;
   min-width: 300px;
+  max-width: 300px;
   padding-right: 2px;
 }
 

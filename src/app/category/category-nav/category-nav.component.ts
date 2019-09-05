@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { NavigationComponent } from "src/app/navigation/navigation.component";
 
 @Component({
   selector: "app-category-nav",
@@ -20,5 +21,18 @@ export class CategoryNavComponent {
           this.cols = 1;
         }
       });
+  }
+
+  catOpen() {
+    let catmenu = document.getElementById("searchtxt").style.visibility;
+    console.log(catmenu);
+    if (catmenu === "hidden") {
+      document.getElementById("searchtxt").style.visibility = "visible";
+    } else {
+      document.getElementById("searchtxt").style.visibility = "hidden";
+    }
+  }
+  open() {
+    document.getElementById("cart").click();
   }
 }

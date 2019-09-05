@@ -16,6 +16,10 @@ import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input";
 import { MatBadgeModule } from "@angular/material/badge";
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
+
 @NgModule({
   declarations: [CategoryNavComponent],
   imports: [
@@ -32,7 +36,10 @@ import { MatBadgeModule } from "@angular/material/badge";
     MatGridListModule,
     MatCardModule,
     MatInputModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class CategoryModule {}

@@ -35,19 +35,14 @@
           <span>Register/Login</span>
         </div>
       </div>
-      <div class="nav_item_right" (click)="drawer.toggle()">
+      <div class="nav_item_right" id="cart" (click)="openDialog()">
         <div class="ico-menu">
           <span matBadge="8" matBadgeOverlap="false" matBadgeColor="accent">SHOPPING CART</span>
-
         </div>
       </div>
-
     </mat-toolbar>
     <!-- Add Content Here -->
-
     <router-outlet>
-
     </router-outlet>
-
   </mat-sidenav-content>
 </mat-sidenav-container>
