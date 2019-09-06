@@ -6,28 +6,27 @@
       Life Online Shopping
     </mat-toolbar>
     <mat-nav-list>
-
       <a mat-list-item [matMenuTriggerFor]="animals">
-        <img class="icons" src="../../assets/icons8-girl-480.png"> မ
+        <img class="icons" src="../../assets/women.svg"> မ
         ၀တ္<span class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <mat-menu id="Ma" #animals="matMenu">
         <button mat-menu-item>Vertebrates</button>
         <button mat-menu-item>Invertebrates</button>
       </mat-menu>
-      <a mat-list-item routerLink="/category/item"><img class="icons" src="../../assets/icons8-boy-96.png">က်ား၀တ္<span
+      <a mat-list-item routerLink="/category/item"><img class="icons" src="../../assets/men.svg">က်ား၀တ္<span
           class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
-      <a mat-list-item><img class="icons" src="../../assets/icons8-luggage-128.png">
+      <a mat-list-item><img class="icons" src="../../assets/hand-bag.svg">
         အိတ္နွင့္ခရီးေဆာင္အိပ္<span class="right"><img class="icons_arrow"
             src="../../assets/icons8-expand-arrow-80.png"></span>
       </a>
-      <a mat-list-item><img class="icons" src="../../assets/icons8-lip-gloss-48.png">
+      <a mat-list-item><img class="icons" src="../../assets/makeover.svg">
         က်န္းမာေရးနွင့္အလွပ<span class="right"><img class="icons_arrow"
             src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <a mat-list-item><img class="icons" src="../../assets/icons8-baby-80.png">
         ကလေးအသုံးအဆောင္<span class="right"><img class="icons_arrow"
             src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <a mat-list-item><img class="icons" src="../../assets/icons8-beef-burger-512.png">
-        အစားအေသာက္<span class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
+        အစားေသာက္<span class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <a mat-list-item><img class="icons" src="../../assets/icons8-sneaker-512.png">ဖိနပ္<span class="right"><img
             class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <a mat-list-item><img class="icons" src="../../assets/icons8-engagement-ring-96.png">
@@ -44,18 +43,16 @@
     <mat-toolbar id="catMenu" color="primary">
       <div class="nav_item_left_green" matTooltip="Click to display categories" (click)="drawer.toggle();catOpen()">
         <div class="ico-menu">
-          <img class="icons" src="../../assets/baseline_view_carousel_black_48dp.png">
+          <img class="icons" src="../../assets/menu.svg">
         </div>
       </div>
-
       <input id="searchtxt" matInput class="input_search" placeholder="Search....." />
 
-      <img id="searchbtn" class="input_search_btn" src="../../assets/icons8-search-80.png">
+      <img id="searchbtn" class="input_search_btn" src="../../assets/search.svg">
 
-      <img class="input_cart_btn" matTooltip="Click to show Shopping Cart" (click)="open()"
-        src="../../assets/icons8-shopping-cart-80.png">
+      <img class="input_cart_btn" matTooltip="Click to show Shopping Cart" (click)="open()" src="../../assets/cart.svg">
       <img class="input_z_btn" matTooltip="Click to display categories" (click)="drawer.toggle();catOpen()"
-        src="../../assets/round_view_carousel_black_48dp.png">
+        src="../../assets/menu.svg">
     </mat-toolbar>
 
     <!-- Add Content Here -->
@@ -98,6 +95,84 @@
               alt="Photo of a Shiba Inu">
 
 --->
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <mat-card-title>
+                {{this.cols}}
+                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                  <img class="icons" src="../../assets/more.png">
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                  <button mat-menu-item>Expand</button>
+                  <button mat-menu-item>Remove</button>
+                </mat-menu>
+              </mat-card-title>
+            </mat-card-header>
+            <!--- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                alt="Photo of a Shiba Inu">
+  -->
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <mat-card-title>
+                {{this.cols}}
+                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                  <img class="icons" src="../../assets/more.png">
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                  <button mat-menu-item>Detail Informations</button>
+                  <button mat-menu-item> Add to Shopping Cart</button>
+                </mat-menu>
+              </mat-card-title>
+            </mat-card-header>
+            <!---    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                alt="Photo of a Shiba Inu">
+  
+  --->
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <mat-card-title>
+                {{this.cols}}
+                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                  <img class="icons" src="../../assets/more.png">
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                  <button mat-menu-item>Expand</button>
+                  <button mat-menu-item>Remove</button>
+                </mat-menu>
+              </mat-card-title>
+            </mat-card-header>
+            <!--- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                  alt="Photo of a Shiba Inu">
+    -->
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <mat-card-title>
+                {{this.cols}}
+                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                  <img class="icons" src="../../assets/more.png">
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                  <button mat-menu-item>Detail Informations</button>
+                  <button mat-menu-item> Add to Shopping Cart</button>
+                </mat-menu>
+              </mat-card-title>
+            </mat-card-header>
+            <!---    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                  alt="Photo of a Shiba Inu">
+    
+    --->
           </mat-card>
         </mat-grid-tile>
       </mat-grid-list>

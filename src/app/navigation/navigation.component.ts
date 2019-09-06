@@ -53,7 +53,7 @@ export class shopCart {
   openDialogPayment() {
     this.onNoClick();
     const dialogRef = this.dialog.open(payment, {
-      height: "500px",
+      height: "550px",
       width: "350px"
     });
     dialogRef.afterClosed().subscribe(result => {
