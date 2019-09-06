@@ -5,7 +5,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import {
   NavigationComponent,
-  shopCart
+  shopCart,
+  payment
 } from "./navigation/navigation.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -21,14 +22,22 @@ import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { ShoppingCartTableComponent } from "./shopping-cart-table/shopping-cart-table.component";
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     ShoppingCartTableComponent,
-    shopCart
+    shopCart,
+    payment,
+    RegisterFormComponent
   ],
-  entryComponents: [shopCart],
+  entryComponents: [shopCart, payment],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -44,7 +53,12 @@ import { ShoppingCartTableComponent } from "./shopping-cart-table/shopping-cart-
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

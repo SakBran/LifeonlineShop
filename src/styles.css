@@ -11,6 +11,8 @@ body {
 }
 
 
+
+
 .mat-toolbar.mat-primary {
   padding: 0;
 }
@@ -252,17 +254,4 @@ body {
   }
 }
 
-@media only screen and (max-width: 450px) {
-  .input_search {
-    position: absolute;
-    right: 42px;
-    height: 30px;
-    border: 1px solid;
-    border-block-color: #49c5b6;
-    border-left-color: #49c5b6;
-    border-right-color: #49c5b6;
-    min-width: 100px;
-    max-width: 100px;
-    padding-right: 2px;
-  }
-}
+@media only screen and (max-width: 450px) {}

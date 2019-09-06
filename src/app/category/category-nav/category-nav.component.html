@@ -50,7 +50,7 @@
 
       <input id="searchtxt" matInput class="input_search" placeholder="Search....." />
 
-      <img class="input_search_btn" src="../../assets/icons8-search-80.png">
+      <img id="searchbtn" class="input_search_btn" src="../../assets/icons8-search-80.png">
 
       <img class="input_cart_btn" matTooltip="Click to show Shopping Cart" (click)="open()"
         src="../../assets/icons8-shopping-cart-80.png">
@@ -89,8 +89,8 @@
                   <img class="icons" src="../../assets/more.png">
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>Detail</button>
-                  <button mat-menu-item> Order</button>
+                  <button mat-menu-item>Detail Informations</button>
+                  <button mat-menu-item> Add to Shopping Cart</button>
                 </mat-menu>
               </mat-card-title>
             </mat-card-header>

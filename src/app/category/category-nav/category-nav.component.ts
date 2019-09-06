@@ -25,14 +25,30 @@ export class CategoryNavComponent {
 
   catOpen() {
     let catmenu = document.getElementById("searchtxt").style.visibility;
-    console.log(catmenu);
     if (catmenu === "hidden") {
       document.getElementById("searchtxt").style.visibility = "visible";
+      document.getElementById("searchbtn").style.visibility = "visible";
     } else {
       document.getElementById("searchtxt").style.visibility = "hidden";
+      document.getElementById("searchbtn").style.visibility = "hidden";
     }
   }
   open() {
     document.getElementById("cart").click();
+  }
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.breakpointObserver
+      .observe([Breakpoints.HandsetLandscape, Breakpoints.HandsetPortrait])
+      .subscribe(result => {
+        if (result.matches) {
+          document.getElementById("searchtxt").style.minWidth = "150px";
+          document.getElementById("searchtxt").style.maxWidth = "150px";
+        } else {
+          document.getElementById("searchtxt").style.minWidth = "300px";
+          document.getElementById("searchtxt").style.maxWidth = "300px";
+        }
+      });
   }
 }
