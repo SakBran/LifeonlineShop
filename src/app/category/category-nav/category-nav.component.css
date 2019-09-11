@@ -4,7 +4,7 @@
 
 
 .sidenav {
-  width: 250px;
+  width: 350px;
 }
 
 .mat-list-item {
@@ -233,7 +233,7 @@ button.mat-menu-item {
   min-width: 300px;
   max-width: 300px;
   padding-right: 2px;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .input_search_btn {
@@ -269,13 +269,13 @@ button.mat-menu-item {
 
 .input_search_btn:hover {
   border: 5px solid transparent;
-  border-radius: 4px;
+  border-radius: 5px;
 
 }
 
 .input_cart_btn:hover {
   border: 4px solid transparent;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .input_z_btn:hover {
@@ -284,7 +284,7 @@ button.mat-menu-item {
 
 input:hover {
   background-color: beige;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 

@@ -2,12 +2,21 @@ import { Component, Inject } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Observable } from "rxjs";
 import { map, shareReplay } from "rxjs/operators";
+
 import {
   MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA
 } from "@angular/material/dialog";
 import { FormBuilder, Validators } from "@angular/forms";
+import { appSetting } from "../app-setting";
+import { zawgyi2Unicode } from "../Zawgyi2Unicode";
+import { unicode2zawgyi1 } from "../Unicode2Zawgyi";
+import { formatNumber } from "@angular/common";
+import { navigationLabel } from "../model/navigationLabel";
+import { registerLabel } from "../model/registerLabel";
+import { msgLabel } from "../model/msgLabel";
+
 @Component({
   selector: "app-navigation",
   templateUrl: "./navigation.component.html",
@@ -23,16 +32,39 @@ export class NavigationComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private appSetting: appSetting
   ) {}
+  nav: navigationLabel;
+
+  ngOnInit(): void {
+    this.nav = Object.assign(
+      this.appSetting.fontSession(this.appSetting.navTitle)
+    );
+  }
   openDialog() {
     const dialogRef = this.dialog.open(shopCart, {
-      height: "400px",
-      width: "98%"
+      height: "100%",
+      width: "99%"
     });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+    dialogRef.afterClosed().subscribe(result => {});
+  }
+  openDialogPayment() {
+    const dialogRef = this.dialog.open(payment, {
+      height: "100%",
+      width: "99%"
     });
+    dialogRef.afterClosed().subscribe(result => {});
+  }
+  zawgyi() {
+    let font = "font";
+    localStorage.setItem(font, "z");
+    location.reload(false);
+  }
+  unicode() {
+    let font = "font";
+    localStorage.setItem(font, "u");
+    location.reload(false);
   }
 }
 
@@ -43,9 +75,17 @@ export class NavigationComponent {
 export class shopCart {
   constructor(
     public dialogRef: MatDialogRef<shopCart>,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private appSetting: appSetting
   ) {}
-
+  msgLabel: msgLabel;
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.msgLabel = Object.assign(
+      this.appSetting.fontSession(this.appSetting.msgTitle)
+    );
+  }
   onNoClick(): void {
     this.dialogRef.close();
   }
@@ -53,12 +93,10 @@ export class shopCart {
   openDialogPayment() {
     this.onNoClick();
     const dialogRef = this.dialog.open(payment, {
-      height: "550px",
-      width: "350px"
+      height: "100%",
+      width: "99%"
     });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe(result => {});
   }
 }
 
@@ -157,6 +195,7 @@ export class payment {
 
   onSubmit() {
     alert("Thanks!");
+    this.dialogRef.close();
   }
   onNoClick(): void {
     this.dialogRef.close();

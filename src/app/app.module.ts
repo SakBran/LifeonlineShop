@@ -22,12 +22,17 @@ import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { ShoppingCartTableComponent } from "./shopping-cart-table/shopping-cart-table.component";
-import { RegisterFormComponent } from './register-form/register-form.component';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterFormComponent } from "./register-form/register-form.component";
+import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatCardModule } from "@angular/material/card";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatTreeModule } from "@angular/material/tree";
+import { appSetting } from "./app-setting";
+import { zawgyi2Unicode } from "./Zawgyi2Unicode";
+import { unicode2zawgyi1 } from "./Unicode2Zawgyi";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,9 +63,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTreeModule
   ],
-  providers: [],
+  providers: [appSetting, zawgyi2Unicode, unicode2zawgyi1],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

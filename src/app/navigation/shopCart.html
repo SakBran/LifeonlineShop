@@ -1,10 +1,7 @@
-<h1 mat-dialog-title>Shopping List</h1>
-<div mat-dialog-content>
-    <mat-card class="shipping-card">
-        <app-shopping-cart-table></app-shopping-cart-table>
-    </mat-card>
-</div>
-<div mat-dialog-actions>
-    <button mat-stroked-button color="primary" (click)="onNoClick()">Back</button>
-    <button mat-stroked-button color="primary" (click)="openDialogPayment()">Payment</button>
-</div>
+<mat-card>
+    <app-shopping-cart-table></app-shopping-cart-table>
+    <br />
+    <button mat-stroked-button color="primary" (click)="onNoClick()">{{this.msgLabel.close}}</button>
+    &nbsp;
+    <button mat-stroked-button color="primary" (click)="openDialogPayment()">{{this.msgLabel.submit}}</button>
+</mat-card>

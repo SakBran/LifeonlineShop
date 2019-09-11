@@ -1,42 +1,48 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar id="toolbar" (click)="drawer.toggle()">
+    <mat-toolbar id="toolbar" (click)="drawer.toggle();catOpen()">
       <img class="icons" src="../../assets/icons8-life-cycle-80.png">
       Life Online Shopping
     </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item [matMenuTriggerFor]="animals">
-        <img class="icons" src="../../assets/women.svg"> မ
-        ၀တ္<span class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
+        <img class="icons" src="../../assets/women.svg">{{this.dataCategory.woman}}<span class="right"><img
+            class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <mat-menu id="Ma" #animals="matMenu">
-        <button mat-menu-item>Vertebrates</button>
-        <button mat-menu-item>Invertebrates</button>
+        <button mat-menu-item>အပေါ်ဝတ်နှင့်ဝမ်းဆက်များ</button>
+        <button mat-menu-item>အောက်ပိုင်းဝတ်များ</button>
+        <button mat-menu-item>အပေါ်ရုံနှင့်ဂျာကင်များ</button>
+        <button mat-menu-item>ရိုးရာပွဲတော်အဝတ်အထည်များ</button>
+        <button mat-menu-item>အမျိုးသမီးအသုံးအဆောင်များ</button>
       </mat-menu>
-      <a mat-list-item routerLink="/category/item"><img class="icons" src="../../assets/men.svg">က်ား၀တ္<span
-          class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
+      <a mat-list-item routerLink="/category/item"><img class="icons"
+          src="../../assets/men.svg">{{this.dataCategory.man}}<span class="right"><img class="icons_arrow"
+            src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <a mat-list-item><img class="icons" src="../../assets/hand-bag.svg">
-        အိတ္နွင့္ခရီးေဆာင္အိပ္<span class="right"><img class="icons_arrow"
+        {{this.dataCategory.bag}}<span class="right"><img class="icons_arrow"
             src="../../assets/icons8-expand-arrow-80.png"></span>
       </a>
       <a mat-list-item><img class="icons" src="../../assets/makeover.svg">
-        က်န္းမာေရးနွင့္အလွပ<span class="right"><img class="icons_arrow"
+        {{this.dataCategory.health}}<span class="right"><img class="icons_arrow"
             src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <a mat-list-item><img class="icons" src="../../assets/icons8-baby-80.png">
-        ကလေးအသုံးအဆောင္<span class="right"><img class="icons_arrow"
+        {{this.dataCategory.baby}}<span class="right"><img class="icons_arrow"
             src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <a mat-list-item><img class="icons" src="../../assets/icons8-beef-burger-512.png">
-        အစားေသာက္<span class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
-      <a mat-list-item><img class="icons" src="../../assets/icons8-sneaker-512.png">ဖိနပ္<span class="right"><img
-            class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
+        {{this.dataCategory.foods}}<span class="right"><img class="icons_arrow"
+            src="../../assets/icons8-expand-arrow-80.png"></span></a>
+      <a mat-list-item><img class="icons" src="../../assets/icons8-sneaker-512.png">{{this.dataCategory.footwear}}<span
+          class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <a mat-list-item><img class="icons" src="../../assets/icons8-engagement-ring-96.png">
-        ေက်ာက္မ်က္ရတနာ<span class="right"><img class="icons_arrow"
+        {{this.dataCategory.jewel}}<span class="right"><img class="icons_arrow"
             src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <a mat-list-item><img class="icons" src="../../assets/icons8-iphone-x-200.png">
-        ဖုန္းနွင့္ဆက္စပ္<span class="right"><img class="icons_arrow"
+        {{this.dataCategory.phone}}<span class="right"><img class="icons_arrow"
             src="../../assets/icons8-expand-arrow-80.png"></span></a>
-      <a mat-list-item><img class="icons" src="../../assets/icons8-reflector-bulb-80.png">လွ်ပ္စစ္<span
-          class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
+      <a mat-list-item><img class="icons"
+          src="../../assets/icons8-reflector-bulb-80.png">{{this.dataCategory.electronic}}<span class="right"><img
+            class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -56,8 +62,8 @@
     </mat-toolbar>
 
     <!-- Add Content Here -->
-    <div class="grid-container">
-      <mat-grid-list cols="2" rowHeight="350px">
+    <div id="cat-grid" class="grid-container">
+      <mat-grid-list cols="6" rowHeight="350px">
         <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
           <mat-card class="dashboard-card">
             <mat-card-header>
@@ -67,8 +73,8 @@
                   <img class="icons" src="../../assets/more.png">
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>Expand</button>
-                  <button mat-menu-item>Remove</button>
+                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
+                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
                 </mat-menu>
               </mat-card-title>
             </mat-card-header>
@@ -86,8 +92,8 @@
                   <img class="icons" src="../../assets/more.png">
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>Detail Informations</button>
-                  <button mat-menu-item> Add to Shopping Cart</button>
+                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
+                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
                 </mat-menu>
               </mat-card-title>
             </mat-card-header>
@@ -106,8 +112,8 @@
                   <img class="icons" src="../../assets/more.png">
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>Expand</button>
-                  <button mat-menu-item>Remove</button>
+                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
+                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
                 </mat-menu>
               </mat-card-title>
             </mat-card-header>
@@ -125,8 +131,8 @@
                   <img class="icons" src="../../assets/more.png">
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>Detail Informations</button>
-                  <button mat-menu-item> Add to Shopping Cart</button>
+                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
+                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
                 </mat-menu>
               </mat-card-title>
             </mat-card-header>
@@ -145,8 +151,8 @@
                   <img class="icons" src="../../assets/more.png">
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>Expand</button>
-                  <button mat-menu-item>Remove</button>
+                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
+                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
                 </mat-menu>
               </mat-card-title>
             </mat-card-header>
@@ -164,8 +170,8 @@
                   <img class="icons" src="../../assets/more.png">
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>Detail Informations</button>
-                  <button mat-menu-item> Add to Shopping Cart</button>
+                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
+                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
                 </mat-menu>
               </mat-card-title>
             </mat-card-header>
@@ -178,6 +184,8 @@
       </mat-grid-list>
     </div>
     <!-- Add Content Here -->
+    <div id="cat-grid-close">
 
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
