@@ -1,10 +1,8 @@
 import { Component } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
-import { NavigationComponent } from "src/app/navigation/navigation.component";
 import { categoryLabel } from "src/app/model/categoryLabel";
 import { appSetting } from "src/app/app-setting";
 import { msgLabel } from "src/app/model/msgLabel";
-
 @Component({
   selector: "app-category-nav",
   templateUrl: "./category-nav.component.html",
@@ -28,7 +26,12 @@ export class CategoryNavComponent {
         }
       });
   }
-
+  onScrollUp() {
+    console.log("UP");
+  }
+  onScrollDown() {
+    console.log("DOWN");
+  }
   catOpen() {
     let catmenu = document.getElementById("searchtxt").style.visibility;
     if (catmenu === "hidden") {

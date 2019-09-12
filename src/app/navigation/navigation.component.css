@@ -2,6 +2,10 @@
   height: 100%;
 }
 
+.example-section {
+  padding: 10px;
+}
+
 .sidenav {
   width: 300px;
 }

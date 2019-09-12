@@ -1,12 +1,13 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import {
   NavigationComponent,
   shopCart,
-  payment
+  payment,
+  fontSelect
 } from "./navigation/navigation.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -17,7 +18,7 @@ import { MatListModule } from "@angular/material/list";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatTooltipModule } from "@angular/material/tooltip";
-import { MatDialogModule } from "@angular/material/dialog";
+import { MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
@@ -32,7 +33,8 @@ import { MatTreeModule } from "@angular/material/tree";
 import { appSetting } from "./app-setting";
 import { zawgyi2Unicode } from "./Zawgyi2Unicode";
 import { unicode2zawgyi1 } from "./Unicode2Zawgyi";
-
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { FontSelectorComponent } from "./font-selector/font-selector.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,9 +42,11 @@ import { unicode2zawgyi1 } from "./Unicode2Zawgyi";
     ShoppingCartTableComponent,
     shopCart,
     payment,
-    RegisterFormComponent
+    fontSelect,
+    RegisterFormComponent,
+    FontSelectorComponent
   ],
-  entryComponents: [shopCart, payment],
+  entryComponents: [shopCart, payment, fontSelect],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -64,9 +68,21 @@ import { unicode2zawgyi1 } from "./Unicode2Zawgyi";
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
-    MatTreeModule
+    MatTreeModule,
+    InfiniteScrollModule,
+    MatSlideToggleModule
   ],
-  providers: [appSetting, zawgyi2Unicode, unicode2zawgyi1],
+  providers: [
+    appSetting,
+    zawgyi2Unicode,
+    unicode2zawgyi1,
+    {
+      provide: MatDialogRef,
+      useValue: {
+        close: (dialogResult: any) => {}
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

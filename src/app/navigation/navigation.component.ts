@@ -1,20 +1,11 @@
-import { Component, Inject } from "@angular/core";
+import { Component } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Observable } from "rxjs";
 import { map, shareReplay } from "rxjs/operators";
-
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA
-} from "@angular/material/dialog";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { FormBuilder, Validators } from "@angular/forms";
 import { appSetting } from "../app-setting";
-import { zawgyi2Unicode } from "../Zawgyi2Unicode";
-import { unicode2zawgyi1 } from "../Unicode2Zawgyi";
-import { formatNumber } from "@angular/common";
 import { navigationLabel } from "../model/navigationLabel";
-import { registerLabel } from "../model/registerLabel";
 import { msgLabel } from "../model/msgLabel";
 
 @Component({
@@ -36,14 +27,25 @@ export class NavigationComponent {
     private appSetting: appSetting
   ) {}
   nav: navigationLabel;
-
+  msgLabel: msgLabel;
   ngOnInit(): void {
     this.nav = Object.assign(
       this.appSetting.fontSession(this.appSetting.navTitle)
     );
+    this.msgLabel = Object.assign(
+      this.appSetting.fontSession(this.appSetting.msgTitle)
+    );
   }
   openDialog() {
     const dialogRef = this.dialog.open(shopCart, {
+      height: "100%",
+      width: "99%"
+    });
+    dialogRef.afterClosed().subscribe(result => {});
+  }
+
+  openFontDialog() {
+    const dialogRef = this.dialog.open(fontSelect, {
       height: "100%",
       width: "99%"
     });
@@ -55,16 +57,6 @@ export class NavigationComponent {
       width: "99%"
     });
     dialogRef.afterClosed().subscribe(result => {});
-  }
-  zawgyi() {
-    let font = "font";
-    localStorage.setItem(font, "z");
-    location.reload(false);
-  }
-  unicode() {
-    let font = "font";
-    localStorage.setItem(font, "u");
-    location.reload(false);
   }
 }
 
@@ -192,6 +184,25 @@ export class payment {
     { name: "Wisconsin", abbreviation: "WI" },
     { name: "Wyoming", abbreviation: "WY" }
   ];
+
+  onSubmit() {
+    alert("Thanks!");
+    this.dialogRef.close();
+  }
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
+
+@Component({
+  selector: "fontSelect",
+  templateUrl: "fontSelect.html"
+})
+export class fontSelect {
+  constructor(
+    public dialogRef: MatDialogRef<fontSelect>,
+    private fb: FormBuilder
+  ) {}
 
   onSubmit() {
     alert("Thanks!");

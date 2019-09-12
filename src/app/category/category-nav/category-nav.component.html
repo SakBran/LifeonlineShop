@@ -63,7 +63,9 @@
 
     <!-- Add Content Here -->
     <div id="cat-grid" class="grid-container">
-      <mat-grid-list cols="6" rowHeight="350px">
+      <mat-grid-list cols="6" rowHeight="350px" infiniteScroll [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="50" [infiniteScrollContainer]="selector" [fromRoot]="true" (scrolled)="onScrollDown()"
+        (scrolledUp)="onScrollUp()">
         <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
           <mat-card class="dashboard-card">
             <mat-card-header>

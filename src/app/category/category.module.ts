@@ -11,7 +11,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatTooltipModule } from "@angular/material/tooltip";
-
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input";
@@ -39,7 +39,8 @@ import { MatSortModule } from "@angular/material/sort";
     MatBadgeModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    InfiniteScrollModule
   ]
 })
 export class CategoryModule {}

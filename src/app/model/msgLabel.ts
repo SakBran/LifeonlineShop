@@ -12,4 +12,6 @@ export class msgLabel {
   detail: String;
   addtocart: String;
   remove: String;
+  changeFont: String;
+  change: String;
 }

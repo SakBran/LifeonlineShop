@@ -4,14 +4,16 @@
     <mat-toolbar></mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="category" (click)="drawer.toggle()">
-        <img class="icons" src="../../assets/icons8-home-64.png">{{this.nav.Home}}
+        <img class="icons" src="../../assets/house.svg">{{this.nav.Home}}
       </a>
-      <a mat-list-item href="#" (click)="drawer.toggle()">
-        <img class="icons" src="../../assets/icons8-outgoing-call-64.png">{{this.nav.ContactUs}}</a>
-      <a mat-list-item href="#" (click)="drawer.toggle()">
-        <img class="icons" src="../../assets/icons8-more-info-80.png">{{this.nav.AboutUs}}</a>
-      <a mat-list-item href="#" routerLink="register" (click)="drawer.toggle();openDialogPayment()">
-        <img class="icons" src="../../assets/icons8-login-64.png">{{this.nav.Register}}</a>
+      <a mat-list-item (click)="drawer.toggle()">
+        <img class="icons" src="../../assets/smartphone.svg">{{this.nav.ContactUs}}</a>
+      <a mat-list-item (click)="drawer.toggle()">
+        <img class="icons" src="../../assets/network.svg">{{this.nav.AboutUs}}</a>
+      <a mat-list-item (click)="drawer.toggle();openDialogPayment()">
+        <img class="icons" src="../../assets/log-in.svg">{{this.nav.Register}}</a>
+      <a mat-list-item (click)="drawer.toggle();openFontDialog()">
+        <img class="icons" src="../../assets/text.svg">{{this.msgLabel.changeFont}}</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -23,14 +25,20 @@
       </div>
       <div class="nav_item_right_title">
         <div class="ico-menu">
-          <span (click)="drawer.toggle()">T2.0</span>
-          <button (click)="zawgyi()">Zawgyi</button>
-          <button (click)="unicode()">Uincode</button>
+          <button mat-button (click)="drawer.toggle()"><img class="icons"
+              src="../../assets/debit-card.svg">T2.0</button>
+        </div>
+      </div>
+      <div class="nav_item_right_title">
+        <div class="ico-menu">
+          <button mat-button (click)="openFontDialog()"> <img class="icons" src="../../assets/text.svg">
+            {{this.msgLabel.changeFont}}</button>
         </div>
       </div>
       <div class=" nav_item_right_2nd">
         <div class="ico-menu">
-          <span (click)="openDialogPayment()">{{this.nav.Register}}</span>
+          <button mat-button (click)="openDialogPayment()"><img class="icons"
+              src="../../assets/log-in.svg">{{this.nav.Register}}</button>
         </div>
       </div>
       <div class="nav_item_right" id="cart" (click)="openDialog()">

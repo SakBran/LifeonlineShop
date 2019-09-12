@@ -1,10 +1,6 @@
 import { Component } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA
-} from "@angular/material/dialog";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { shopCart } from "../navigation/navigation.component";
 import { appSetting } from "../app-setting";
 import { registerLabel } from "../model/registerLabel";
@@ -115,8 +111,6 @@ export class RegisterFormComponent {
     this.msgLabel = Object.assign(
       this.appSetting.fontSession(this.appSetting.msgTitle)
     );
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
   }
   onSubmit() {
     if (typeof this.dialogRef !== "undefined") {

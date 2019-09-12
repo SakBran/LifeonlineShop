@@ -49,7 +49,9 @@ export class appSetting {
     close: "ပိတ်မည်",
     detail: "အသေးစိတ်အချက်အလက်",
     addtocart: "၀ယ်မည့်ထဲပေါင်းထည့်မည်",
-    remove: "ဖယ်ထုတ်မည်"
+    remove: "ဖယ်ထုတ်မည်",
+    changeFont: "Zawgyi/Unicode",
+    change: "ပြောင်းလဲမည်။"
   };
   //Change obejcet property's informations to zawgyi fonts
   public zawgyiConvert(obj): object {
