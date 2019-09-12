@@ -28,14 +28,15 @@ export class FontSelectorComponent {
     } else {
       this.fontType = "";
     }
+
+    this.msgLabel = Object.assign(
+      this.appSetting.fontSession(this.appSetting.msgTitle)
+    );
   }
   msgLabel: msgLabel;
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.msgLabel = Object.assign(
-      this.appSetting.fontSession(this.appSetting.msgTitle)
-    );
   }
   onSubmit() {
     if (typeof this.dialogRef !== "undefined") {

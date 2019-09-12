@@ -1,8 +1,8 @@
-<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
-  <mat-card class="shipping-card">
-    <mat-card-header>
-      <mat-card-title>Fonts Information</mat-card-title>
-    </mat-card-header>
+<mat-card class="shipping-card">
+  <mat-card-header>
+    <mat-card-title>Fonts Information</mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
     <mat-card-content>
       <div class="row">
         <div class="col">
@@ -13,8 +13,10 @@
         </div>
       </div>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">{{this.msgLabel.change}}</button>
-    </mat-card-actions>
-  </mat-card>
-</form>
+  </form>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="this.dialogRef.close()"
+      type="submit">{{this.msgLabel.close}}</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()" type="submit">{{this.msgLabel.change}}</button>
+  </mat-card-actions>
+</mat-card>

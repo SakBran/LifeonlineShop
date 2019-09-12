@@ -56,6 +56,8 @@
 
       <img id="searchbtn" class="input_search_btn" src="../../assets/search.svg">
 
+      <img class="input_messenger_btn" matTooltip="Click to chat in Messenger" (click)="open()"
+        src="../../assets/messenger.svg">
       <img class="input_cart_btn" matTooltip="Click to show Shopping Cart" (click)="open()" src="../../assets/cart.svg">
       <img class="input_z_btn" matTooltip="Click to display categories" (click)="drawer.toggle();catOpen()"
         src="../../assets/menu.svg">
@@ -85,104 +87,7 @@
 -->
           </mat-card>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
-          <mat-card class="dashboard-card">
-            <mat-card-header>
-              <mat-card-title>
-                {{this.cols}}
-                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                  <img class="icons" src="../../assets/more.png">
-                </button>
-                <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
-                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
-                </mat-menu>
-              </mat-card-title>
-            </mat-card-header>
-            <!---    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-              alt="Photo of a Shiba Inu">
 
---->
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
-          <mat-card class="dashboard-card">
-            <mat-card-header>
-              <mat-card-title>
-                {{this.cols}}
-                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                  <img class="icons" src="../../assets/more.png">
-                </button>
-                <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
-                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
-                </mat-menu>
-              </mat-card-title>
-            </mat-card-header>
-            <!--- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                alt="Photo of a Shiba Inu">
-  -->
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
-          <mat-card class="dashboard-card">
-            <mat-card-header>
-              <mat-card-title>
-                {{this.cols}}
-                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                  <img class="icons" src="../../assets/more.png">
-                </button>
-                <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
-                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
-                </mat-menu>
-              </mat-card-title>
-            </mat-card-header>
-            <!---    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                alt="Photo of a Shiba Inu">
-  
-  --->
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
-          <mat-card class="dashboard-card">
-            <mat-card-header>
-              <mat-card-title>
-                {{this.cols}}
-                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                  <img class="icons" src="../../assets/more.png">
-                </button>
-                <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
-                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
-                </mat-menu>
-              </mat-card-title>
-            </mat-card-header>
-            <!--- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                  alt="Photo of a Shiba Inu">
-    -->
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
-          <mat-card class="dashboard-card">
-            <mat-card-header>
-              <mat-card-title>
-                {{this.cols}}
-                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                  <img class="icons" src="../../assets/more.png">
-                </button>
-                <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
-                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
-                </mat-menu>
-              </mat-card-title>
-            </mat-card-header>
-            <!---    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                  alt="Photo of a Shiba Inu">
-    
-    --->
-          </mat-card>
-        </mat-grid-tile>
       </mat-grid-list>
     </div>
     <!-- Add Content Here -->

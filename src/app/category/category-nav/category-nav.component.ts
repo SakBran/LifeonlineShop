@@ -25,6 +25,12 @@ export class CategoryNavComponent {
           this.cols = 2;
         }
       });
+    this.msgLabel = Object.assign(
+      this.appSetting.fontSession(this.appSetting.msgTitle)
+    );
+    this.dataCategory = Object.assign(
+      this.appSetting.fontSession(this.appSetting.catTitle)
+    );
   }
   onScrollUp() {
     console.log("UP");
@@ -52,14 +58,6 @@ export class CategoryNavComponent {
   dataCategory: categoryLabel;
   msgLabel: msgLabel;
   ngOnInit(): void {
-    this.dataCategory = Object.assign(
-      this.appSetting.fontSession(this.appSetting.catTitle)
-    );
-    this.msgLabel = Object.assign(
-      this.appSetting.fontSession(this.appSetting.msgTitle)
-    );
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.breakpointObserver
       .observe([Breakpoints.HandsetLandscape, Breakpoints.HandsetPortrait])
       .subscribe(result => {

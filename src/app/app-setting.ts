@@ -48,7 +48,7 @@ export class appSetting {
     pay: "ငွေချေမည်",
     close: "ပိတ်မည်",
     detail: "အသေးစိတ်အချက်အလက်",
-    addtocart: "၀ယ်မည့်ထဲပေါင်းထည့်မည်",
+    addtocart: "ဝယ်ယူမည့်ထဲပေါင်းထည့်မည်",
     remove: "ဖယ်ထုတ်မည်",
     changeFont: "Zawgyi/Unicode",
     change: "ပြောင်းလဲမည်။"

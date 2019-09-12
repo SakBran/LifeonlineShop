@@ -15,7 +15,7 @@ body {
 }
 
 .mat-menu-item {
-  font-family: "Zawgyi-One" !important;
+  background-color: inherit;
 }
 
 .mat-toolbar.mat-primary {
