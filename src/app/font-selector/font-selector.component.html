@@ -7,8 +7,8 @@
       <div class="row">
         <div class="col">
           <mat-radio-group [(ngModel)]="this.fontType" formControlName="font">
-            <mat-radio-button value="z" [checked]="this.fontType==z">Zawgyi Font</mat-radio-button>
-            <mat-radio-button value="u" [checked]="this.fontType==u">Unicode Font</mat-radio-button>
+            <mat-radio-button value="z" [checked]="this.fontType=='z'">Zawgyi Font</mat-radio-button>
+            <mat-radio-button value="u" [checked]="this.fontType=='u'">Unicode Font</mat-radio-button>
           </mat-radio-group>
         </div>
       </div>

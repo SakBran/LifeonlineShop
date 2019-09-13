@@ -1,6 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="'navigation'" [mode]="'side'" [opened]="false">
     <mat-toolbar id="toolbar" (click)="drawer.toggle();catOpen()">
       <img class="icons" src="../../assets/icons8-life-cycle-80.png">
       Life Online Shopping
@@ -46,7 +45,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar id="catMenu" color="primary">
+    <mat-toolbar color="primary">
       <div class="nav_item_left_green" matTooltip="Click to display categories" (click)="drawer.toggle();catOpen()">
         <div class="ico-menu">
           <img class="icons" src="../../assets/menu.svg">
@@ -66,8 +65,7 @@
     <!-- Add Content Here -->
     <div id="cat-grid" class="grid-container">
       <mat-grid-list cols="6" rowHeight="350px" infiniteScroll [infiniteScrollDistance]="2"
-        [infiniteScrollThrottle]="50" [infiniteScrollContainer]="selector" [fromRoot]="true" (scrolled)="onScrollDown()"
-        (scrolledUp)="onScrollUp()">
+        [infiniteScrollThrottle]="50" [fromRoot]="true" (scrolled)="onScrollDown()" (scrolledUp)="onScrollUp()">
         <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
           <mat-card class="dashboard-card">
             <mat-card-header>
