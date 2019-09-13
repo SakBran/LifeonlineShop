@@ -79,10 +79,13 @@ import { FontSelectorComponent } from "./font-selector/font-selector.component";
     {
       provide: MatDialogRef,
       useValue: {
-        close: (dialogResult: any) => {}
+        close: closeX
       }
     }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+export function closeX() {
+  (dialogResult: any) => {};
+}

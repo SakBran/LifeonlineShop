@@ -14,4 +14,5 @@ export class msgLabel {
   remove: String;
   changeFont: String;
   change: String;
+  search: String;
 }
