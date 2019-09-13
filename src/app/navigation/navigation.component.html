@@ -3,17 +3,22 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar></mat-toolbar>
     <mat-nav-list>
+      <span id="zawgyi_uni" (click)="openFontDialog()"></span>
       <a mat-list-item routerLink="category" (click)="drawer.toggle()">
-        <img class="icons" src="../../assets/house.svg">{{this.nav.Home}}
+        <img class="icons" src="../../assets/house.svg">&nbsp;{{this.nav.Home}}
       </a>
       <a mat-list-item (click)="drawer.toggle()">
-        <img class="icons" src="../../assets/smartphone.svg">{{this.nav.ContactUs}}</a>
+        <img class="icons" src="../../assets/smartphone.svg">&nbsp;{{this.nav.ContactUs}}</a>
       <a mat-list-item (click)="drawer.toggle()">
-        <img class="icons" src="../../assets/network.svg">{{this.nav.AboutUs}}</a>
+        <img class="icons" src="../../assets/network.svg">&nbsp;{{this.nav.AboutUs}}</a>
       <a mat-list-item (click)="drawer.toggle();openDialogPayment()">
-        <img class="icons" src="../../assets/log-in.svg">{{this.nav.Register}}</a>
+        <img class="icons" src="../../assets/log-in.svg">&nbsp;{{this.nav.Register}}</a>
+
       <a mat-list-item (click)="drawer.toggle();openFontDialog()">
-        <img class="icons" src="../../assets/text.svg">{{this.msgLabel.changeFont}}</a>
+        <img class="icons" src="../../assets/text.svg">&nbsp;{{this.msgLabel.changeFont}}</a>
+      <a mat-list-item (click)="drawer.toggle();openFontDialog()">
+        <img class="icons" src="../../assets/cancel.svg">&nbsp;{{this.msgLabel.close}}</a>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -52,4 +57,5 @@
     <router-outlet>
     </router-outlet>
   </mat-sidenav-content>
+
 </mat-sidenav-container>
