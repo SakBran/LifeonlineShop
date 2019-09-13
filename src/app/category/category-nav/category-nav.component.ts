@@ -12,6 +12,9 @@ export class CategoryNavComponent {
   cols = 1;
   rows = 1;
   drawer = "open";
+  dataCategory: categoryLabel;
+  msgLabel: msgLabel;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     private appSetting: appSetting
@@ -68,8 +71,7 @@ export class CategoryNavComponent {
   open() {
     document.getElementById("cart").click();
   }
-  dataCategory: categoryLabel;
-  msgLabel: msgLabel;
+
   ngOnInit(): void {
     this.breakpointObserver
       .observe([Breakpoints.HandsetLandscape, Breakpoints.HandsetPortrait])
