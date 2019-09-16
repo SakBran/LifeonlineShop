@@ -35,6 +35,7 @@ import { zawgyi2Unicode } from "./Zawgyi2Unicode";
 import { unicode2zawgyi1 } from "./Unicode2Zawgyi";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FontSelectorComponent } from "./font-selector/font-selector.component";
+
 @NgModule({
   declarations: [
     AppComponent,

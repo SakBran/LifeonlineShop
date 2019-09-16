@@ -7,6 +7,8 @@ import { zawgyi2Unicode } from "./Zawgyi2Unicode";
 
 export class appSetting {
   constructor(private U2Z: unicode2zawgyi1, private Z2U: zawgyi2Unicode) {}
+  public colsx = 1;
+  public cols = 2;
   public catTitle: categoryLabel = {
     woman: "အမျိုးသမီးဝတ်",
     man: "အမျိုးသားဝတ်",
@@ -47,8 +49,8 @@ export class appSetting {
     submit: "ဆက်လုပ်မည်",
     pay: "ငွေချေမည်",
     close: "ပိတ်မည်",
-    detail: "အသေးစိတ်အချက်အလက်",
-    addtocart: "ဝယ်ယူမည့်ထဲပေါင်းထည့်မည်",
+    detail: "Detail...",
+    addtocart: "Add",
     remove: "ဖယ်ထုတ်မည်",
     changeFont: "Zawgyi/Unicode",
     change: "ပြောင်းလဲမည်။",

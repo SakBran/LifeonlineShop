@@ -3,6 +3,7 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar></mat-toolbar>
     <mat-nav-list>
+
       <span id="zawgyi_uni" (click)="openFontDialog()"></span>
       <a mat-list-item routerLink="category" (click)="drawer.toggle()">
         <img class="icons" src="../../assets/house.svg">&nbsp;{{this.nav.Home}}
@@ -13,17 +14,11 @@
         <img class="icons" src="../../assets/network.svg">&nbsp;{{this.nav.AboutUs}}</a>
       <a mat-list-item (click)="drawer.toggle();openDialogPayment()">
         <img class="icons" src="../../assets/log-in.svg">&nbsp;{{this.nav.Register}}</a>
-
-      <a mat-list-item (click)="drawer.toggle();openFontDialog()">
-        <img class="icons" src="../../assets/text.svg">&nbsp;{{this.msgLabel.changeFont}}</a>
-      <a mat-list-item (click)="drawer.toggle();openFontDialog()">
-        <img class="icons" src="../../assets/cancel.svg">&nbsp;{{this.msgLabel.close}}</a>
-
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <div class="nav_item_left" (click)="drawer.toggle()">
+      <div class="nav_item_left" (click)="drawer.toggle();openNav()">
         <div class="ico-menu">
           <img class="icons" src="../../assets/list.svg">
         </div>
@@ -34,12 +29,7 @@
               src="../../assets/debit-card.svg">T2.0</button>
         </div>
       </div>
-      <div class="nav_item_right_title">
-        <div class="ico-menu">
-          <button mat-button (click)="openFontDialog()"> <img class="icons" src="../../assets/text.svg">
-            {{this.msgLabel.changeFont}}</button>
-        </div>
-      </div>
+
       <div class=" nav_item_right_2nd">
         <div class="ico-menu">
           <button mat-button (click)="openDialogPayment()"><img class="icons"

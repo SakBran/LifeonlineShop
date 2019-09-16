@@ -1,0 +1,48 @@
+.grid-container {
+  margin: 20px;
+}
+
+.grid-containerx {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+
+.detail_image {
+  min-width: 95%;
+  min-height: 350px;
+  margin: 10px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .detail_image {
+    min-width: 90%;
+  }
+}
+
+.detail_item {
+  min-width: 90%;
+  min-height: 350px;
+  margin: 10px !important;
+}
+
+.containerx {
+  margin: 10px !important;
+}

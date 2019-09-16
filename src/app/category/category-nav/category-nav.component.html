@@ -55,7 +55,7 @@
 
       <img id="searchbtn" class="input_search_btn" src="../../assets/search.svg">
 
-      <img class="input_font_btn" matTooltip="Click to change fonts" (click)="font()" src="../../assets/text.svg">
+
       <img class="input_messenger_btn" matTooltip="Click to chat in Messenger" (click)="open()"
         src="../../assets/messenger.svg">
       <img class="input_cart_btn" matTooltip="Click to show Shopping Cart" (click)="open()" src="../../assets/cart.svg">
@@ -84,7 +84,8 @@
               </p>
             </mat-card-content>
             <mat-card-actions>
-              <button id="cartCardDetail" mat-stroked-button>{{this.msgLabel.detail}}</button>&nbsp;
+              <button id="cartCardDetail" routerLink="/category/1"
+                mat-stroked-button>{{this.msgLabel.detail}}</button>&nbsp;
               <button id="cartCard" mat-stroked-button>{{this.msgLabel.addtocart}}</button>
             </mat-card-actions>
           </mat-card>

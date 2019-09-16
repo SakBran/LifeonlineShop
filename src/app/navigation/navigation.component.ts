@@ -21,6 +21,24 @@ export class NavigationComponent {
       shareReplay()
     );
 
+  openNav() {
+    if (this.appSetting.colsx == 1) {
+      this.appSetting.colsx = 2;
+      try {
+        if (typeof document.getElementById("di") !== "undefined") {
+          document.getElementById("di").style.minWidth = "90%";
+        }
+      } catch (e) {}
+    } else {
+      this.appSetting.colsx = 1;
+      try {
+        if (typeof document.getElementById("di") !== "undefined") {
+          document.getElementById("di").style.minWidth = "95%";
+        }
+      } catch (e) {}
+    }
+  }
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     public dialog: MatDialog,
