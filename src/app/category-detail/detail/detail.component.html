@@ -1,0 +1,30 @@
+<div class="grid-container">
+  <div class="containerx">
+    <mat-grid-list cols="6" rowHeight="400px">
+      <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
+        <mat-card id="di" class="detail_image">
+          Hello
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+<div class="grid-containerx">
+  <div class="containerx">
+    <mat-grid-list cols="2" rowHeight="400px">
+      <mat-grid-tile [colspan]="this.appSetting.colsx" [rowspan]="this.rowsx">
+        <mat-card class="detail_item">
+          Hello
+        </mat-card>
+
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="this.appSetting.colsx" [rowspan]="this.rowsx">
+        <mat-card class="detail_item">
+          Hello
+        </mat-card>
+
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </div>

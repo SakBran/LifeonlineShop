@@ -4,7 +4,7 @@
 
 
 .sidenav {
-  width: 350px;
+  width: 349px;
 }
 
 .mat-list-item {
@@ -277,6 +277,16 @@ button.mat-menu-item {
 
 }
 
+.input_font_btn {
+  position: fixed;
+  right: 2px;
+  cursor: pointer;
+  bottom: 150px;
+  max-width: 30px;
+  max-height: 30px;
+
+}
+
 .input_search_btn:hover {
   border: 5px solid transparent;
   border-radius: 5px;
@@ -289,6 +299,11 @@ button.mat-menu-item {
 }
 
 .input_messenger_btn:hover {
+  border: 4px solid transparent;
+  border-radius: 5px;
+}
+
+.input_font_btn:hover {
   border: 4px solid transparent;
   border-radius: 5px;
 }

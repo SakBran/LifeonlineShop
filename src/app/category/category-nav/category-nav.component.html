@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="'navigation'" [mode]="'side'" [opened]="false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="'navigation'" [mode]="'side'" [opened]="true">
     <mat-toolbar id="toolbar" (click)="drawer.toggle();catOpen()">
       <img class="icons" src="../../assets/icons8-life-cycle-80.png">
       Life Online Shopping
@@ -16,32 +16,32 @@
         <button mat-menu-item>အမျိုးသမီးအသုံးအဆောင်များ</button>
       </mat-menu>
       <a mat-list-item routerLink="/category/item"><img class="icons"
-          src="../../assets/men.svg">{{this.dataCategory.man}}<span class="right"><img class="icons_arrow"
+          src="../../assets/men.svg">&nbsp;{{this.dataCategory.man}}<span class="right"><img class="icons_arrow"
             src="../../assets/icons8-expand-arrow-80.png"></span></a>
-      <a mat-list-item><img class="icons" src="../../assets/hand-bag.svg">
-        {{this.dataCategory.bag}}<span class="right"><img class="icons_arrow"
-            src="../../assets/icons8-expand-arrow-80.png"></span>
+      <a mat-list-item><img class="icons" src="../../assets/hand-bag.svg">&nbsp;{{this.dataCategory.bag}}<span
+          class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span>
       </a>
-      <a mat-list-item><img class="icons" src="../../assets/makeover.svg">
-        {{this.dataCategory.health}}<span class="right"><img class="icons_arrow"
-            src="../../assets/icons8-expand-arrow-80.png"></span></a>
-      <a mat-list-item><img class="icons" src="../../assets/icons8-baby-80.png">
-        {{this.dataCategory.baby}}<span class="right"><img class="icons_arrow"
-            src="../../assets/icons8-expand-arrow-80.png"></span></a>
-      <a mat-list-item><img class="icons" src="../../assets/icons8-beef-burger-512.png">
-        {{this.dataCategory.foods}}<span class="right"><img class="icons_arrow"
-            src="../../assets/icons8-expand-arrow-80.png"></span></a>
-      <a mat-list-item><img class="icons" src="../../assets/icons8-sneaker-512.png">{{this.dataCategory.footwear}}<span
+      <a mat-list-item><img class="icons" src="../../assets/makeover.svg">&nbsp;{{this.dataCategory.health}}<span
           class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
-      <a mat-list-item><img class="icons" src="../../assets/icons8-engagement-ring-96.png">
-        {{this.dataCategory.jewel}}<span class="right"><img class="icons_arrow"
-            src="../../assets/icons8-expand-arrow-80.png"></span></a>
-      <a mat-list-item><img class="icons" src="../../assets/icons8-iphone-x-200.png">
-        {{this.dataCategory.phone}}<span class="right"><img class="icons_arrow"
-            src="../../assets/icons8-expand-arrow-80.png"></span></a>
+      <a mat-list-item><img class="icons" src="../../assets/icons8-baby-80.png">&nbsp;{{this.dataCategory.baby}}<span
+          class="right"><img class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
       <a mat-list-item><img class="icons"
-          src="../../assets/icons8-reflector-bulb-80.png">{{this.dataCategory.electronic}}<span class="right"><img
+          src="../../assets/icons8-beef-burger-512.png">&nbsp;{{this.dataCategory.foods}}<span class="right"><img
             class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
+      <a mat-list-item><img class="icons"
+          src="../../assets/icons8-sneaker-512.png">&nbsp;{{this.dataCategory.footwear}}<span class="right"><img
+            class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
+      <a mat-list-item><img class="icons"
+          src="../../assets/icons8-engagement-ring-96.png">&nbsp;{{this.dataCategory.jewel}}<span class="right"><img
+            class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
+      <a mat-list-item><img class="icons"
+          src="../../assets/icons8-iphone-x-200.png">&nbsp;{{this.dataCategory.phone}}<span class="right"><img
+            class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
+      <a mat-list-item><img class="icons"
+          src="../../assets/icons8-reflector-bulb-80.png">&nbsp;{{this.dataCategory.electronic}}<span class="right"><img
+            class="icons_arrow" src="../../assets/icons8-expand-arrow-80.png"></span></a>
+      <a mat-list-item (click)="drawer.toggle();catOpen()"><img class="icons"
+          src="../../assets/cancel.svg">&nbsp;{{this.msgLabel.close}}<span class="right"></span></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -55,6 +55,7 @@
 
       <img id="searchbtn" class="input_search_btn" src="../../assets/search.svg">
 
+
       <img class="input_messenger_btn" matTooltip="Click to chat in Messenger" (click)="open()"
         src="../../assets/messenger.svg">
       <img class="input_cart_btn" matTooltip="Click to show Shopping Cart" (click)="open()" src="../../assets/cart.svg">
@@ -64,25 +65,29 @@
 
     <!-- Add Content Here -->
     <div id="cat-grid" class="grid-container">
-      <mat-grid-list cols="6" rowHeight="350px" infiniteScroll [infiniteScrollDistance]="2"
+      <mat-grid-list cols="6" rowHeight="650px" infiniteScroll [infiniteScrollDistance]="2"
         [infiniteScrollThrottle]="50" [fromRoot]="true" (scrolled)="onScrollDown()" (scrolledUp)="onScrollUp()">
-        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows">
-          <mat-card class="dashboard-card">
+        <mat-grid-tile [colspan]="this.cols" [rowspan]="this.rows" *ngFor="let item of items; let i=index">
+          <mat-card class="shopitem-card">
             <mat-card-header>
-              <mat-card-title>
-                {{this.cols}}
-                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                  <img class="icons" src="../../assets/more.png">
-                </button>
-                <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>{{this.msgLabel.detail}}</button>
-                  <button mat-menu-item>{{this.msgLabel.addtocart}}</button>
-                </mat-menu>
-              </mat-card-title>
+              <div mat-card-avatar class="shopitem-header-image"></div>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
             </mat-card-header>
-            <!--- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
               alt="Photo of a Shiba Inu">
--->
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button id="cartCardDetail" routerLink="/category/1"
+                mat-stroked-button>{{this.msgLabel.detail}}</button>&nbsp;
+              <button id="cartCard" mat-stroked-button>{{this.msgLabel.addtocart}}</button>
+            </mat-card-actions>
           </mat-card>
         </mat-grid-tile>
 

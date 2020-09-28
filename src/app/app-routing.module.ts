@@ -4,9 +4,16 @@ import { RegisterFormComponent } from "./register-form/register-form.component";
 
 const routes: Routes = [
   {
-    path: "",
+    path: "category",
     loadChildren: () =>
       import("./category/category.module").then(mod => mod.CategoryModule)
+  },
+  {
+    path: "category/:id",
+    loadChildren: () =>
+      import("./category-detail/category-detail.module").then(
+        mod => mod.CategoryDetailModule
+      )
   },
   {
     path: "register",

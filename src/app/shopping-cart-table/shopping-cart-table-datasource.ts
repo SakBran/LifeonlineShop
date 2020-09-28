@@ -14,7 +14,25 @@ export interface ShoppingCartTableItem {
 const EXAMPLE_DATA: ShoppingCartTableItem[] = [
   { id: 1, name: "Hydrogen" },
   { id: 2, name: "Helium" },
-  { id: 3, name: "Lithium" }
+  { id: 3, name: "Lithium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" },
+  { id: 2, name: "Helium" }
 ];
 
 /**
